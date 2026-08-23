@@ -463,7 +463,9 @@ src="https://www.facebook.com/tr?id=2308636749535919&ev=PageView&noscript=1"
         })
       });
       if (!response.ok) throw new Error('Formspree submission failed');
-      if (typeof fbq === 'function') fbq('track', 'Lead');
+      if (typeof fbq === 'function') {
+  fbq('track', 'Purchase', { value: 15000.00, currency: 'NGN' });
+}
     } catch(e) {
       console.error('Formspree error:', e);
       alert('We could not submit your order right now. Please check your internet connection and try again.');
